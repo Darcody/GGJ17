@@ -79,7 +79,7 @@ public class ShowPanels : MonoBehaviour {
 
     public void ShowLosePanel()
     {
-        winPanel.SetActive(true);
+        losePanel.SetActive(true);
         optionsTint.SetActive(false);
     }
 
