@@ -5,6 +5,7 @@ using UnityEngine;
 public class BoatMovement : MonoBehaviour
 {
     [SerializeField] float maxTurningPerFrame = 10.0f;
+    [SerializeField] float movementSpeed = 10.0f;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class BoatMovement : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, maxTurningPerFrame * Time.deltaTime);
             }
         }
+        transform.Translate(new Vector3(0.0f, 0.0f, movementSpeed * Time.deltaTime));
 
     }
 }
