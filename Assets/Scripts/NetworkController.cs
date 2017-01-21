@@ -35,7 +35,7 @@ public class NetworkController : NetworkManager {
         var playerPrefab = spawnPrefabs[curPlayer];
 
         // Create player object with prefab
-        var player = Instantiate(playerPrefab, spawnPosition[curPlayer].position, Quaternion.identity) as GameObject;
+        var player = Instantiate(playerPrefab, spawnPosition[curPlayer].position, spawnPosition[curPlayer].rotation) as GameObject;
 
         // Add player object for connection
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);

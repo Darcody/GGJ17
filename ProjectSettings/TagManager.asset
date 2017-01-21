@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terrain
   - Water
+  - Harbour
   layers:
   - Default
   - TransparentFX

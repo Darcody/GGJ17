@@ -8,6 +8,10 @@ public class LighthouseControls : NetworkBehaviour
     [SerializeField] Camera lighthouseCam;
     void Start()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         GameObject.Find("Lighthouse").GetComponent<LighthouseLightMovement>().m_lightTarget = this.gameObject;
         lighthouseCam = GameObject.Find("LighthouseCamera").GetComponent<Camera>();
     }
