@@ -9,6 +9,8 @@ public class BoatMovement : NetworkBehaviour
     [SerializeField] float movementSpeed = 10.0f;
     [SerializeField] GameObject boatCam;
 
+    private bool readyForAction = false;
+
     void Start()
     {
         if (isLocalPlayer)
@@ -30,6 +32,10 @@ public class BoatMovement : NetworkBehaviour
 
         if (Input.GetMouseButton(0))
         {
+            if(!readyForAction)
+            { 
+                readyForAction = true;
+            }
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float dist;
             Plane plane = new Plane(Vector3.up, transform.position);
@@ -39,7 +45,9 @@ public class BoatMovement : NetworkBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, maxTurningPerFrame * Time.deltaTime);
             }
         }
-        transform.Translate(new Vector3(0.0f, 0.0f, movementSpeed * Time.deltaTime));
-
+        if(readyForAction)
+        { 
+            transform.Translate(new Vector3(0.0f, 0.0f, movementSpeed * Time.deltaTime));
+        }
     }
 }
