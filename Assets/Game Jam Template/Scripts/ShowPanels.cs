@@ -92,6 +92,7 @@ public class ShowPanels : MonoBehaviour {
     public void BackToMenu()
     {
         HideWinPanel();
+        HidePausePanel();
         ShowMenu();
     }
 }

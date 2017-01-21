@@ -40,5 +40,10 @@ public class NetworkController : NetworkManager {
         // Add player object for connection
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
+
+    public void OnApplicationQuit()
+    {
+        Network.Disconnect();
+    }
 }
 
