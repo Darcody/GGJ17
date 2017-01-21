@@ -514,13 +514,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1599459734255522}
-  m_LocalRotation: {x: 0.57006854, y: 0, z: 0, w: 0.82159716}
-  m_LocalPosition: {x: 0, y: 0.3948, z: -0.1334}
+  m_LocalRotation: {x: 0.45567414, y: -0, z: -0, w: 0.89014673}
+  m_LocalPosition: {x: 0, y: 0.2988, z: -0.1334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4388689951383798}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 69.51, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 54.217003, y: 0, z: 0}
 --- !u!4 &4163962042680310
 Transform:
   m_ObjectHideFlags: 1
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTurningPerFrame: 10
-  movementSpeed: 0.01
+  movementSpeed: 0.04
   boatCam: {fileID: 1599459734255522}
 --- !u!124 &124882929701794574
 Behaviour:
