@@ -29,7 +29,8 @@ public class BoatHit : MonoBehaviour {
                 GetComponent<BoatMovement>().enabled = false;
                 Destroy(toSink.gameObject);
                 sunk = true;
-                Network.Disconnect();
+                
+                //Network.Disconnect();
                 uiObject.GetComponent<ShowPanels>().ShowLosePanel();
                 GameManager.isLose = true;
             }
@@ -39,7 +40,7 @@ public class BoatHit : MonoBehaviour {
         if(collision.gameObject.tag == "Harbour")
         {
             print("Win");
-            Network.Disconnect();
+            //Network.Disconnect();
             uiObject.GetComponent<ShowPanels>().ShowWinPanel();
             GameManager.isWin = true;
             //SceneManager.LoadScene("WinScene", LoadSceneMode.Additive);
@@ -52,7 +53,7 @@ public class BoatHit : MonoBehaviour {
         if (other.gameObject.tag == "Harbour")
         {
             print("Win");
-            Network.Disconnect();
+            //Network.Disconnect();
             uiObject.GetComponent<ShowPanels>().ShowWinPanel();
             GameManager.isWin = true;
             //SceneManager.LoadScene("WinScene", LoadSceneMode.Additive);

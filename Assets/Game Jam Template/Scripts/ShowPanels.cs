@@ -62,6 +62,8 @@ public class ShowPanels : MonoBehaviour {
     public void HideRoleSelection()
     {
         rolePanel.SetActive(false);
+        winPanel.SetActive(false);
+        losePanel.SetActive(false);
         optionsTint.SetActive(false);
     }
 
@@ -85,13 +87,15 @@ public class ShowPanels : MonoBehaviour {
 
     public void HideLosePanel()
     {
-        winPanel.SetActive(false);
+        losePanel.SetActive(false);
         optionsTint.SetActive(false);
     }
 
     public void BackToMenu()
     {
+        //Debug.Log("Dann blass mir doch einen");
         HideWinPanel();
+        HideLosePanel();
         HidePausePanel();
         ShowMenu();
     }

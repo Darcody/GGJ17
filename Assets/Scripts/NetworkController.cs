@@ -9,6 +9,12 @@ public class NetworkController : NetworkManager {
     public Transform[] spawnPosition = new Transform[2];
     public int curPlayer = 0;
 
+    public void Start()
+    {
+        spawnPosition[0] = GameObject.Find("SpawnLighthouse").transform;
+        spawnPosition[1] = GameObject.Find("SpawnBoat").transform;
+    }
+
     //Called on client when connect
     public override void OnClientConnect(NetworkConnection conn)
     {
@@ -25,6 +31,9 @@ public class NetworkController : NetworkManager {
     // Server
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
     {
+        spawnPosition[0] = GameObject.Find("SpawnLighthouse").transform;
+        spawnPosition[1] = GameObject.Find("SpawnBoat").transform;
+
         // Read client message and receive index
         if (extraMessageReader.Length > 0)
         {

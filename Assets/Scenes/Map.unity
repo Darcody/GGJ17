@@ -2652,6 +2652,12 @@ Prefab:
       propertyPath: m_AnchorMax.x
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114629950649252056, guid: c7e5f16b89cc85342a578970b1966433,
+        type: 2}
+      propertyPath: network
+      value: 
+      objectReference: {fileID: 1713445697386954, guid: 3351090fdc5e8334c9b9a2c20683c043,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7e5f16b89cc85342a578970b1966433, type: 2}
   m_IsPrefabParent: 0
@@ -4679,21 +4685,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: m_Channels.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: spawnPosition.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4384085547152542, guid: 3351090fdc5e8334c9b9a2c20683c043, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4728,15 +4719,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
         type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[0]
+      propertyPath: m_PlayerPrefab
       value: 
-      objectReference: {fileID: 1813806221990300, guid: b729ba3ebbf9ee547b04a4afc4d9c67a,
-        type: 2}
-    - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1100070411550990, guid: 3539bba3415536a4b908161a8b386714,
+      objectReference: {fileID: 1092666376895886, guid: 32523f33512f6aa4d8bd6ce3cd9d52ef,
         type: 2}
     - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
         type: 2}
@@ -4748,35 +4733,13 @@ Prefab:
       propertyPath: spawnPosition.Array.data[1]
       value: 
       objectReference: {fileID: 1647316362}
-    - target: {fileID: 114471150969954184, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: showGUI
+    - target: {fileID: 1713445697386954, guid: 3351090fdc5e8334c9b9a2c20683c043, type: 2}
+      propertyPath: m_Name
+      value: NetworkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713445697386954, guid: 3351090fdc5e8334c9b9a2c20683c043, type: 2}
+      propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: spawnPosition.Array.data[2]
-      value: 
-      objectReference: {fileID: 1183868946}
-    - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: m_CustomConfig
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114383732759150640, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: m_Channels.Array.data[0]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114471150969954184, guid: 3351090fdc5e8334c9b9a2c20683c043,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3351090fdc5e8334c9b9a2c20683c043, type: 2}
