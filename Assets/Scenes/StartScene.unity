@@ -2267,6 +2267,12 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 445200587}
+--- !u!114 &465912547 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11449250, guid: 45616935e4fe10f48b62da1347801a16,
+    type: 2}
+  m_PrefabInternal: {fileID: 202494292}
+  m_Script: {fileID: 11500000, guid: 9623e989f1af0480990a4cc5c3928663, type: 3}
 --- !u!1001 &475525027
 Prefab:
   m_ObjectHideFlags: 0
@@ -3229,7 +3235,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 490095413}
         m_MethodName: StartButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -6905,7 +6911,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 465912547}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -7207,7 +7213,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 465912547}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
