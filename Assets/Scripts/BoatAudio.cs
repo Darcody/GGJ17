@@ -16,8 +16,10 @@ public class BoatAudio : MonoBehaviour
 
     }
 
-    void Update()
+    public void Crash()
     {
-        
+        mySource.clip = allClips[1];
+        mySource.loop = false;
+        mySource.Play();
     }
 }

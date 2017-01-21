@@ -29,7 +29,7 @@ public class BoatHit : MonoBehaviour {
                 GetComponent<BoatMovement>().enabled = false;
                 Destroy(toSink.gameObject);
                 sunk = true;
-                
+                GameObject.Find("AudioSource").GetComponent<BoatAudio>().Crash();
                 //Network.Disconnect();
                 uiObject.GetComponent<ShowPanels>().ShowLosePanel();
                 GameManager.isLose = true;
