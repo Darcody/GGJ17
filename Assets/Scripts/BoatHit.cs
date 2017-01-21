@@ -5,6 +5,8 @@ using UnityEngine;
 public class BoatHit : MonoBehaviour {
     public GameObject toSink;
     public GameObject sinking;
+
+    bool sunk = false;
     // Use this for initialization
     void Start () {
 		
@@ -19,15 +21,20 @@ public class BoatHit : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Terrain") {
             // Destroy(this);
-            print("Lose");
-            Instantiate(sinking, this.transform.position, this.transform.rotation);
-            GetComponent<BoatMovement>().enabled = false;
-            Destroy(toSink.gameObject);
+            if (sunk == false) {
+                print("Lose");
+                Instantiate(sinking, this.transform.position, this.transform.rotation);
+                GetComponent<BoatMovement>().enabled = false;
+                Destroy(toSink.gameObject);
+                sunk = true;
+            }
+          
         }
 
         if(collision.gameObject.tag == "Harbour")
         {
             print("Win");
+            GetComponent<BoatMovement>().enabled = false;
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -35,6 +42,7 @@ public class BoatHit : MonoBehaviour {
         if (other.gameObject.tag == "Harbour")
         {
             print("Win");
+            GetComponent<BoatMovement>().enabled = false;
         }
     }
 }
