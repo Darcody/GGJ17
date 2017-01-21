@@ -8,4 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
   - enabled: 1
-    path: Assets/Scenes/NetworkingTestScene.unity
+    path: Assets/Scenes/Map.unity

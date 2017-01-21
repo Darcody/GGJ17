@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class BoatMovement : MonoBehaviour
+public class BoatMovement : NetworkBehaviour
 {
     [SerializeField] float maxTurningPerFrame = 10.0f;
     [SerializeField] float movementSpeed = 10.0f;
@@ -14,6 +15,11 @@ public class BoatMovement : MonoBehaviour
 
     void Update()
     {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+
         if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

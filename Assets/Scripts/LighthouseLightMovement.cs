@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class LighthouseLightMovement : MonoBehaviour {
+public class LighthouseLightMovement : NetworkBehaviour {
     [SerializeField] private float m_rotationSpeed = 5.0f;
     private GameObject m_lightTarget;
     private GameObject m_light;

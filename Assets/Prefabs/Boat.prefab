@@ -312,6 +312,8 @@ GameObject:
   - component: {fileID: 114652180247546412}
   - component: {fileID: 65699914455712256}
   - component: {fileID: 136161022578510414}
+  - component: {fileID: 114613426154233474}
+  - component: {fileID: 114099627289096666}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -1717,6 +1719,58 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1599459734255522}
   m_Enabled: 1
+--- !u!114 &114099627289096666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666220562604870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114613426154233474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666220562604870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 133
+    i1: 201
+    i2: 55
+    i3: 211
+    i4: 191
+    i5: 196
+    i6: 19
+    i7: 100
+    i8: 25
+    i9: 183
+    i10: 245
+    i11: 200
+    i12: 168
+    i13: 253
+    i14: 237
+    i15: 6
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114652180247546412
 MonoBehaviour:
   m_ObjectHideFlags: 1

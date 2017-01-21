@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     // Determins if Lighthouse (0) or Boat (1)
-    public static int playerPosition = 0;
-
+    public static int playerRole = 0;
+    public int pRole = 5;
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
@@ -19,6 +19,6 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        pRole = playerRole;
 	}
 }

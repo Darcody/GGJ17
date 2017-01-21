@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class LighthouseControls : MonoBehaviour
+public class LighthouseControls : NetworkBehaviour
 {
     private GameObject m_lightTarget;
     private GameObject m_light;
@@ -16,6 +17,11 @@ public class LighthouseControls : MonoBehaviour
 
     void Update()
     {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+
         if (Input.GetMouseButton(0))
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
