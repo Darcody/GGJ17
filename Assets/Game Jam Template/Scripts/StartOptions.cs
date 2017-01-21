@@ -37,6 +37,8 @@ public class StartOptions : MonoBehaviour {
 
 	public void StartButtonClicked()
 	{
+        GameManager.isLose = false;
+        GameManager.isWin = false;
         showPanels.HideRoleSelection();
 		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic, using length of fadeColorAnimationClip as time. 
 		//To change fade time, change length of animation "FadeToColor"
