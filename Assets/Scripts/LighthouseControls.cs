@@ -5,30 +5,27 @@ using UnityEngine.Networking;
 
 public class LighthouseControls : NetworkBehaviour
 {
-    private GameObject m_lightTarget;
-    private GameObject m_light;
-
+    [SerializeField] Camera lighthouseCam;
     void Start()
     {
-        m_lightTarget = transform.FindChild("LightHouseTarget").gameObject;
-        m_light = transform.FindChild("Spotlight").gameObject;
-
+        GameObject.Find("Lighthouse").GetComponent<LighthouseLightMovement>().m_lightTarget = this.gameObject;
+        lighthouseCam = GameObject.Find("LighthouseCamera").GetComponent<Camera>();
     }
 
     void Update()
     {
-        if(!isLocalPlayer)
+        if (!isLocalPlayer)
         {
             return;
         }
 
         if (Input.GetMouseButton(0))
         {
-            Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray mouseRay = lighthouseCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(mouseRay, out hit ))
             {
-                m_lightTarget.transform.position = hit.point;
+                this.transform.position = hit.point;
             }
         }
     }

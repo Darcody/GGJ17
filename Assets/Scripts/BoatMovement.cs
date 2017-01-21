@@ -7,10 +7,18 @@ public class BoatMovement : NetworkBehaviour
 {
     [SerializeField] float maxTurningPerFrame = 10.0f;
     [SerializeField] float movementSpeed = 10.0f;
+    [SerializeField] GameObject boatCam;
 
     void Start()
     {
-
+        if (isLocalPlayer)
+        {
+            GameObject.Find("LighthouseCamera").SetActive(false);
+            return;
+        } else
+        {
+            boatCam.SetActive(false);
+        }
     }
 
     void Update()
