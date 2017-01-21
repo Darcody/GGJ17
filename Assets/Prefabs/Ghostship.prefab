@@ -1753,7 +1753,7 @@ MonoBehaviour:
     i14: 37
     i15: 201
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114578690428689830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1766,7 +1766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  light: {fileID: 0}
   speed: 0.01
+  dist: 0.5
 --- !u!136 &136666147845454692
 CapsuleCollider:
   m_ObjectHideFlags: 1
