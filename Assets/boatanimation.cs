@@ -19,14 +19,14 @@ public class boatanimation : MonoBehaviour {
             {
               //  transform.Rotate(Vector3.right * Time.deltaTime * speed, Space.World);
                 transform.Rotate(Vector3.forward * Time.deltaTime * speed, Space.World);
-                print(transform.eulerAngles.z);
+              //  print(transform.eulerAngles.z);
               //  print("A");
             }
            else  if (transform.localEulerAngles.z > 357f)
             {
                // transform.Rotate(Vector3.right * Time.deltaTime * speed, Space.World);
                 transform.Rotate(Vector3.forward* Time.deltaTime * speed, Space.World);
-                print(transform.eulerAngles.z);
+              //  print(transform.eulerAngles.z);
               //  print("B");
             }
             else {
@@ -43,7 +43,7 @@ public class boatanimation : MonoBehaviour {
             {
             //    transform.Rotate(Vector3.left * Time.deltaTime * speed, Space.World);
                 transform.Rotate(Vector3.back * Time.deltaTime * speed, Space.World);
-                  print(transform.eulerAngles.z);
+               //   print(transform.eulerAngles.z);
                // print("C");
             }
 
@@ -51,7 +51,7 @@ public class boatanimation : MonoBehaviour {
             {
               //  transform.Rotate(Vector3.left * Time.deltaTime * speed, Space.World);
                 transform.Rotate(Vector3.back * Time.deltaTime * speed, Space.World);
-                 print(transform.eulerAngles.z);
+              //   print(transform.eulerAngles.z);
                // print("D");
             }
 
