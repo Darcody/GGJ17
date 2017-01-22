@@ -7,7 +7,10 @@ using UnityEngine.Networking.NetworkSystem;
 public class NetworkController : NetworkManager {
 
     public Transform[] spawnPosition = new Transform[2];
-    public int curPlayer = 0;
+    [Space(20)]
+    public int playerRole;
+    public bool debugablePlayerRole;
+    private int curPlayer;
 
     public void Start()
     {
@@ -18,8 +21,14 @@ public class NetworkController : NetworkManager {
     //Called on client when connect
     public override void OnClientConnect(NetworkConnection conn)
     {
-
-        curPlayer = GameManager.playerRole;
+        if(!debugablePlayerRole)
+        { 
+            curPlayer = GameManager.playerRole;
+        }
+        else
+        {
+            curPlayer = playerRole;
+        }
 
         // Create message to set the player
         IntegerMessage msg = new IntegerMessage(curPlayer);
