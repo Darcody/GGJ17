@@ -52,7 +52,18 @@ public class NetworkController : NetworkManager {
 
     public void OnApplicationQuit()
     {
-        Network.Disconnect();
+        if (Network.isClient)
+        {
+            //NetworkServer.DisconnectAll();
+            StopClient();
+        }
+
+        if (Network.isServer)
+        {
+            //NetworkServer.Shutdown();
+            Debug.Log("This is a Server");
+            StopHost();
+        }
     }
 }
 

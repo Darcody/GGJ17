@@ -5,19 +5,22 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class NetworkUIBehaviour : MonoBehaviour {
+public class NetworkUIBehaviour : MonoBehaviour
+{
 
     public GameObject networkController;
     //public GameObject network;
     public InputField addressField;
+    NetworkController manager; //= networkController.GetComponent<NetworkController>();
 
     public void Start()
     {
         networkController = GameObject.Find("NetworkManager");
+        manager = networkController.GetComponent<NetworkController>();
     }
     public void onHostGameClicked()
     {
-        NetworkController manager = networkController.GetComponent<NetworkController>();
+        //NetworkController manager = networkController.GetComponent<NetworkController>();
         /*if(networkController == null)
         {
             Instantiate(network, Vector3.zero, Quaternion.identity);
@@ -45,10 +48,10 @@ public class NetworkUIBehaviour : MonoBehaviour {
 
         //manager.StopClient();
         manager.StopHost();
-        
+
         //Network.Disconnect();
         //MasterServer.UnregisterHost();
-        
+
         if (!NetworkClient.active && !NetworkServer.active && manager.matchMaker == null)
         {
             NetworkServer.Reset();
@@ -57,77 +60,39 @@ public class NetworkUIBehaviour : MonoBehaviour {
         }
         if (NetworkServer.active)
         {
-            Debug.Log("Server: port=" + networkController.GetComponent<NetworkController>().networkPort);
+            Debug.Log("Server: port=" + manager.networkPort);
         }
         if (NetworkClient.active)
         {
-            Debug.Log("Client: address=" + networkController.GetComponent<NetworkController>().networkAddress + " port=" + networkController.GetComponent<NetworkController>().networkPort);
+            Debug.Log("Client: address=" + manager.networkAddress + " port=" + manager.networkPort);
         }
     }
 
     public void onJoinGameClicked()
     {
-        if (Network.isClient)
-        {
-            //Network.CloseConnection(Network.connections[0], true);
-            networkController.GetComponent<NetworkController>().StopClient();
-        }
-        if (Network.isServer)
-        {
-            //NetworkServer.Shutdown();
-            networkController.GetComponent<NetworkController>().StopHost();
-        }
-        NetworkController manager = networkController.GetComponent<NetworkController>();
+
+        //NetworkController manager = networkController.GetComponent<NetworkController>();
+        manager.StopClient();
+        NetworkServer.Reset();
         if (!NetworkClient.active && !NetworkServer.active && manager.matchMaker == null)
         {
             manager.networkAddress = addressField.text;
             manager.StartClient();
+            //manager.client.
             this.gameObject.SetActive(false);
         }
         if (NetworkServer.active)
         {
-            Debug.Log("Server: port=" + networkController.GetComponent<NetworkController>().networkPort);
+            Debug.Log("Server: port=" + manager.networkPort);
         }
         if (NetworkClient.active)
         {
-            Debug.Log("Client: address=" + networkController.GetComponent<NetworkController>().networkAddress + " port=" + networkController.GetComponent<NetworkController>().networkPort);
+            Debug.Log("Client: address=" + manager.networkAddress + " port=" + manager.networkPort);
         }
     }
-
-    public void Update()
-    {
-       
-        /*if (NetworkClient.active && !ClientScene.ready)
-        {
-            
-                ClientScene.Ready(networkController.GetComponent<NetworkController>().client.connection);
-
-                if (ClientScene.localPlayers.Count == 0)
-                {
-                    ClientScene.AddPlayer(0);
-                }
-            }*/
-        }
-    
 
     public void onBackClicked()
     {
         SceneManager.LoadScene("StartScene");
-    }
-
-    public void OnApplicationQuit()
-    {
-        if (Network.isClient)
-        {
-            //NetworkServer.DisconnectAll();
-            networkController.GetComponent<NetworkController>().StopClient();
-        }
-        if(Network.isServer)
-        {
-            NetworkServer.Shutdown();
-            networkController.GetComponent<NetworkController>().StopHost();
-        }
-        
-        
     }
 }
