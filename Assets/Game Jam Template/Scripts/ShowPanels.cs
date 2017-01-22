@@ -11,6 +11,8 @@ public class ShowPanels : MonoBehaviour {
     public GameObject rolePanel;                            //Store a reference to the Game Object RolePanel
     public GameObject winPanel;                            //Store a reference to the Game Object RolePanel
     public GameObject losePanel;                            //Store a reference to the Game Object RolePanel
+    public GameObject creditsTint;
+    public GameObject creditsPanel;
 
     //Call this function to activate and display the Options panel during the main menu
     public void ShowOptionsPanel()
@@ -98,5 +100,17 @@ public class ShowPanels : MonoBehaviour {
         HideLosePanel();
         HidePausePanel();
         ShowMenu();
+    }
+
+    public void ShowCredits()
+    {
+        creditsTint.SetActive(true);
+        creditsPanel.SetActive(true);
+    }
+
+    public void HideCredits()
+    {
+        creditsTint.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 }
