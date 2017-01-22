@@ -2122,6 +2122,7 @@ MonoBehaviour:
   maxTurningPerFrame: 10
   movementSpeed: 0.04
   boatCam: {fileID: 1510906659439418}
+  compass: {fileID: 1069501995419258}
 --- !u!114 &114490051070280424
 MonoBehaviour:
   m_ObjectHideFlags: 1

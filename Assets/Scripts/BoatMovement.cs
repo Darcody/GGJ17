@@ -10,16 +10,20 @@ public class BoatMovement : NetworkBehaviour
     [SerializeField] GameObject boatCam;
 
     private bool readyForAction = false;
-
+    public GameObject compass;
     void Start()
     {
         if (isLocalPlayer)
         {
             GameObject.Find("LighthouseCamera").SetActive(false);
+            
             return;
         } else
         {
             boatCam.SetActive(false);
+            if (compass != null) {
+                compass.SetActive(false);
+            }
         }
     }
 
