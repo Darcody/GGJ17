@@ -11,6 +11,7 @@ public class BoatMovement : NetworkBehaviour
 
     private bool readyForAction = false;
     public GameObject compass;
+    public GameObject tornado;
     void Start()
     {
         if (isLocalPlayer)
@@ -52,6 +53,16 @@ public class BoatMovement : NetworkBehaviour
         if(readyForAction)
         { 
             transform.Translate(new Vector3(0.0f, 0.0f, movementSpeed * Time.deltaTime));
+            if(tornado != null)
+            {
+                float dist = Vector3.Distance(tornado.transform.position, this.transform.position);
+                if (dist < 1.5f)
+                {
+                    Vector3 pullDirection = tornado.transform.position - this.transform.position;
+                    this.transform.position -= pullDirection.normalized * (Time.deltaTime * (1.5f - dist)) / 50;
+
+                }
+            }
         }
     }
 }
