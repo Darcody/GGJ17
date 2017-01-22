@@ -23,8 +23,12 @@ public class LightningFlash : MonoBehaviour {
             timer = Random.value * 2.5f;
             //flashSource.intensity = Random.value;
             flashSource.enabled = true;
-            audio.clip = list[Random.Range(0, 5)];
-            audio.Play();
+            if (!audio.isPlaying)
+            {
+                audio.clip = list[Random.Range(0, 5)];
+                audio.Play();
+            }
+
         }
         if(flashSource.enabled && flashDuration <= 0f)
         {
