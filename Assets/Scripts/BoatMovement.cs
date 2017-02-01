@@ -12,6 +12,7 @@ public class BoatMovement : NetworkBehaviour
     private bool readyForAction = false;
     public GameObject compass;
     public GameObject tornado;
+    public GameObject rainPS;
     void Start()
     {
         if (isLocalPlayer)
@@ -24,6 +25,7 @@ public class BoatMovement : NetworkBehaviour
             boatCam.SetActive(false);
             if (compass != null) {
                 compass.SetActive(false);
+                rainPS.SetActive(false);
             }
         }
     }
